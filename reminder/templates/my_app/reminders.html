@@ -1,0 +1,24 @@
+{% extends 'my_app/base.html' %}
+{% block title %}REMINDERS!{% endblock %}
+
+{% block body %}
+ <div class="container" >
+ <br/>
+ <div class="row">
+     <div class="col-lg-4">
+         <h1>Reminders</h1>
+     </div>
+ </div>
+ <div class="col-lg-8">
+     <button onclick="location.href='{% url 'add' %}'" type="button" class="btn btn-success">Add Reminder</button>
+ </div>
+    <div class="row">
+
+        {% for reminder in reminders %}
+        {% include 'my_app/reminder_entry.html' %}
+        {% endfor %}
+    </div>
+ </div>
+
+
+{% endblock %}

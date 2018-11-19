@@ -1,0 +1,12 @@
+{% extends 'my_app/base.html' %}
+{% block title %}DETAILS!{% endblock %}
+{% block body %}
+    <button onclick="location.href='{% url 'reminder' %}'" class="btn btn-success">Go Back</button>
+    <hr />
+<div class="container jumbotron">
+    <h1>{{ reminder.name }}</h1>
+    <hr>
+    <h2>{{ reminder.time }}</h2>
+    <h3>{{ reminder.description }}</h3>
+</div>
+{% endblock %}

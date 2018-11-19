@@ -1,0 +1,13 @@
+ <div class="remainder_entry col-lg-4">
+            <br />
+            <h2>{{ reminder.name}}</h2>
+
+            <h4>{{ reminder.time }}</h4>
+            <p>{{ reminder.description}}</p>
+
+
+       <button onclick="location.href='{% url 'details' pk=reminder.id %}'"   class="btn btn-primary">View Details</button>
+        <button onclick="location.href='{% url 'delete' pk=reminder.id %}'"   class="btn btn-danger">DELETE</button>
+
+       <!--<button data-id="{{ reminder.id }}" onclick="deletereminder(this)"   class="btn btn-danger">DELETE</button>
+--> </div>

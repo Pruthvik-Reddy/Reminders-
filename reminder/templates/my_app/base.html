@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+            {% endblock %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'my_app/css/bootstrap.css' %}">
+    <link rel="styleaheet" href="{% static 'my_app/css/style.css' %}">
+</head>
+<body>
+    {%  block body %}
+
+    {% endblock %}
+<script src="{% static 'my_app/js/reminder.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var csrf_token='{{ csrf_token }}'
+</script>
+    <!--
+<script>
+    function deletereminder(reminder){
+    console.log("deleting entry")
+    var $reminder= $(reminder)
+    $reminder.parent().remove()
+    var id= $reminder.data('id')
+
+    $.ajax(
+        {
+            url:'reminder/delete/'+id,
+            method:'DELETE',
+            beforesend:function(xhr){
+                xhr.setRequestHeader('X-CSRFToken',csrf_token)
+            }
+        }
+    )
+}
+</script>-->
+</body>
+</html>
